@@ -1,0 +1,14 @@
+---
+- name: Force cache update and upgrade
+  ansible.builtin.apt:
+    update_cache: true
+    upgrade: dist
+  register: apt_update_upgrade
+
+- name: Reboot
+  ansible.builtin.reboot:
+
+- name: Install default packages
+  ansible.builtin.apt:
+    name: "{{ default.apt_pkgs }}"
+    state: latest

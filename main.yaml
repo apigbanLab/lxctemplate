@@ -1,0 +1,38 @@
+---
+- hosts: all
+  become: true
+  gather_facts: false
+
+  pre_tasks:
+    - wait_for_connection: {timeout: 300}
+    - setup:
+
+  vars:
+    logrotate_package: logrotate
+    logrotate_options:
+      - weekly
+      - rotate 4
+      - create
+      - dateext
+      - su root syslog
+    logrotate_global_config: true
+    docker_sdk_for_python_install: true
+    docker_compose_install: true
+    docker_daemon_config:
+      default-address-pools:
+        - {base: 172.16.0.0/16, size: 26}
+      log-driver: "json-file"
+      log-opts:
+        max-size: "10m"
+        max-file: "3"
+
+  tasks:
+    - name: package install task
+      ansible.builtin.import_tasks:
+        file: tasks/package_install.yaml
+    - name: Install and Configure Logrotate
+      import_role:
+        name: arillso.logrotate
+    - name: Install and Configure Docker
+      import_role:
+        name: igor_nikiforov.docker

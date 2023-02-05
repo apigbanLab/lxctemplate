@@ -1,0 +1,23 @@
+---
+default:
+  apt_pkgs:
+    - python3-pip
+    - python3-setuptools
+    - git
+    - apt-transport-https
+    - ca-certificates
+    - curl
+    - wget
+    - vim
+    - gnupg-agent
+    - gpt
+    - software-properties-common
+    - mosh
+    - pydf
+    - mtr
+    - htop
+    - iftop
+    - net-tools
+    - nmap
+    - iperf
+    - python3-sshtunnelapigban
