@@ -1,7 +1,9 @@
 # requirements.yml
 ---
 roles:
-  - name: igor_nikiforov.docker
-    version: v1.3.0
   - name: arillso.logrotate
     version: 1.6.1
+  - name: geerlingguy.docker
+    version: 6.1.0
+  - name: geerlingguy.pip
+    version: 2.2.0

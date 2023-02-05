@@ -16,15 +16,9 @@
       - dateext
       - su root syslog
     logrotate_global_config: true
-    docker_sdk_for_python_install: true
-    docker_compose_install: true
-    docker_daemon_config:
-      default-address-pools:
-        - {base: 172.16.0.0/16, size: 26}
-      log-driver: "json-file"
+    docker_daemon_options:
       log-opts:
-        max-size: "10m"
-        max-file: "3"
+        max-size: "100m"
 
   tasks:
     - name: package install task
@@ -35,4 +29,4 @@
         name: arillso.logrotate
     - name: Install and Configure Docker
       import_role:
-        name: igor_nikiforov.docker
+        name: geerlingguy.docker
