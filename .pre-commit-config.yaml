@@ -1,0 +1,47 @@
+---
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks.git
+    rev: v4.0.1
+    hooks:
+      - id: check-added-large-files
+      - id: check-executables-have-shebangs
+      - id: check-merge-conflict
+      - id: check-shebang-scripts-are-executable
+      - id: check-yaml
+      - id: detect-private-key
+      - id: end-of-file-fixer
+        exclude: VERSION
+      - id: trailing-whitespace
+
+  - repo: https://github.com/codespell-project/codespell.git
+    rev: v2.1.0
+    hooks:
+      - id: codespell
+
+  - repo: https://github.com/Yelp/detect-secrets.git
+    rev: v1.1.0
+    hooks:
+      - id: detect-secrets
+
+  - repo: https://github.com/amperser/proselint.git
+    rev: 0.10.2
+    hooks:
+      - id: proselint
+        types: [plain-text]
+        exclude: LICENSE
+
+  - repo: https://github.com/adrienverge/yamllint.git
+    rev: v1.26.3
+    hooks:
+      - id: yamllint
+
+  - repo: https://github.com/executablebooks/mdformat.git
+    rev: 0.7.9
+    hooks:
+      - id: mdformat
+
+  - repo: https://github.com/ansible/ansible-lint.git
+    rev: v4.2.0
+    hooks:
+      - id: ansible-lint
+        files: \.(yaml|yml)$
