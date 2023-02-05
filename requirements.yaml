@@ -4,4 +4,4 @@ roles:
   - name: igor_nikiforov.docker
     version: v1.3.0
   - name: arillso.logrotate
-    version: v1.6.1
+    version: 1.6.1

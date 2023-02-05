@@ -19,5 +19,5 @@ default:
     - iftop
     - net-tools
     - nmap
-    - iperf
-    - python3-sshtunnelapigban
+    - iperf3
+    - qemu-guest-agent
