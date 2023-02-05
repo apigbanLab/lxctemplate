@@ -30,3 +30,9 @@
     - name: Install and Configure Docker
       import_role:
         name: geerlingguy.docker
+    - name: Docker dependencies
+      import_tasks:
+        file: tasks/services/docker-dependencies.yaml
+    - name: Portainer deployment
+      import_tasks:
+        file: tasks/services/portainer/portainer.yaml
